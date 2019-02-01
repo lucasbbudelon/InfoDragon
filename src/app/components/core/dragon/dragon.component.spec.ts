@@ -21,6 +21,7 @@ import { DragonService, LoginService } from '../../../services/_index';
 describe('DragonComponent', () => {
   let component: DragonComponent;
   let fixture: ComponentFixture<DragonComponent>;
+  let element;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -55,10 +56,21 @@ describe('DragonComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(DragonComponent);
     component = fixture.componentInstance;
+    element = fixture.nativeElement;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('title', () => {
+    fixture.detectChanges();
+    expect(element.querySelector('h1').innerText).toEqual('Dragões', 'title');
+  });
+
+  it('page buttons', () => {
+    expect(element.querySelector('i.fa-plus-circle')).toBeTruthy('button-new');
+    expect(element.querySelector('i.fa-arrow-left')).toBeTruthy('button-back');
   });
 });

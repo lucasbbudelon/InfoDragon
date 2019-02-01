@@ -21,6 +21,7 @@ import { DragonService, LoginService } from '../../../../services/_index';
 describe('DragonDetailComponent', () => {
   let component: DragonDetailComponent;
   let fixture: ComponentFixture<DragonDetailComponent>;
+  let element;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -56,10 +57,30 @@ describe('DragonDetailComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(DragonDetailComponent);
     component = fixture.componentInstance;
+    element = fixture.nativeElement;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('title put', () => {
+    component.id = '123456789';
+    component.update = true;
+    fixture.detectChanges();
+    expect(element.querySelector('h1').innerText).toEqual('Dragão #123456789', 'title');
+  });
+
+  it('title post', () => {
+    component.update = false;
+    fixture.detectChanges();
+    expect(element.querySelector('h1').innerText).toEqual('Inclusão de Dragão', 'title');
+  });
+
+  it('page buttons', () => {
+    expect(element.querySelector('i.fa-save')).toBeTruthy('button-save');
+    expect(element.querySelector('i.fa-arrow-left')).toBeTruthy('button-back');
+    expect(element.querySelector('i.fa-trash')).toBeTruthy('button-delete');
   });
 });

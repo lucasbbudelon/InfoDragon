@@ -31,7 +31,7 @@
         </div>
       </form>
     </div>
-    <div *ngIf="update && dragon.histories.length" id="histories" class="col-md-3 offset-md-2">
+    <div *ngIf="update && dragon?.histories?.length" id="histories" class="col-md-3 offset-md-2">
       <h2>Filmes/Séries</h2>
       <ul>
         <li *ngFor="let historie of dragon.histories">{{historie}}</li>
