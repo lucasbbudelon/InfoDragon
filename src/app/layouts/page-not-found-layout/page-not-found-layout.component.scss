@@ -1,0 +1,31 @@
+@import "../../../sass/tool-box";
+
+h1 {
+  color: $color-palette-white-1;
+}
+
+//Desktop
+@media (min-width: $responsive-layout-medium) {
+  .container {
+    margin-top: 15vh;
+  }
+
+  img {
+    width: 16em;
+  }
+}
+
+//Mobile
+@media (max-width: $responsive-layout-medium) {
+  h1 {
+    text-align: center;
+  }
+
+  img {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}

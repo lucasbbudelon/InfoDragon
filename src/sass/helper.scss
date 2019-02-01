@@ -1,0 +1,26 @@
+@import "../sass/spacing.scss";
+
+%helper-list-style-none {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+%helper-link-decoration-none {
+  text-decoration: none;
+  color: inherit;
+}
+
+%helper-padding-default {
+  padding-left: $spacing-horizontal-default;
+  padding-right: $spacing-horizontal-default;
+  padding-top: $spacing-vertical-default;
+  padding-bottom: $spacing-vertical-default;
+}
+
+%helper-margin-default {
+  margin-left: $spacing-horizontal-default;
+  margin-right: $spacing-horizontal-default;
+  margin-top: $spacing-vertical-default;
+  margin-bottom: $spacing-vertical-default;
+}

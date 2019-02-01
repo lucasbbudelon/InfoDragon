@@ -1,0 +1,52 @@
+@import "../../../../../sass/tool-box";
+@import "../../../../layouts/default-page-layout/styles/page-header.scss";
+
+h2 {
+  font-size: $font-size-xl;
+}
+
+.field {
+  margin-bottom: $spacing-vertical-default;
+  height: 60px;
+
+  input {
+    width: 100%;
+    border: 0;
+    font-size: $font-size-xl;
+    border-bottom: $border-default-dashed;
+    outline: none;
+  }
+
+  input:focus,
+  input:hover {
+    border-bottom: $border-default;
+  }
+
+  input:invalid {
+    border-bottom: 1px solid $color-palette-red-1;
+  }
+
+  label {
+    width: 100%;
+    margin: 0;
+    font-size: $font-size-md;
+    color: $color-palette-gray-4;
+  }
+}
+
+ul {
+  padding: 0;
+  margin-left: $spacing-vertical-default;
+
+  li {
+    margin-top: $spacing-vertical-sm;
+    font-size: $font-size-md;
+  }
+}
+
+//Mobile
+@media (max-width: $responsive-layout-medium) {
+  #histories {
+    margin-top: $spacing-vertical-default;
+  }
+}

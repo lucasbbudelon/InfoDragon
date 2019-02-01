@@ -1,0 +1,18 @@
+@import "../top-right-menu.component.scss";
+
+$top-icon-size: 1.4em;
+
+.top-right-menu-icon .count {
+  color: $color-palette-white-1;
+  background-color: $color-palette-red-1;
+  font-size: $top-icon-size * 0.4;
+  padding: $top-icon-size * 0.1;
+  $size: $top-icon-size * 0.9;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  z-index: 2;
+}

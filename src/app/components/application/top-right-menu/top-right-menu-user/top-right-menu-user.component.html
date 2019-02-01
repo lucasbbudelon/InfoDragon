@@ -1,0 +1,26 @@
+<i class="fa fa-user top-right-menu-icon" (click)="changeHidden()"></i>
+<nav class="top-right-menu" id="user-info" [hidden]="hidden">
+  <i class="fa fa-times-circle close" (click)="changeHidden()"></i>
+  <div class="header">
+    <img alt="Imagem do usuário" [src]="user?.image">
+    <h1>{{user?.name}}</h1>
+    <h2>{{user?.jobRole}}</h2>
+  </div>
+  <ul class="items">
+    <li>
+      <a href="#"><i class="fa fa-cog"></i>Configurações</a>
+    </li>
+    <li>
+      <a href="#"><i class="fa fa-info-circle"></i>Help</a>
+    </li>
+  </ul>
+  <ul class="items">
+    <li>
+      <a href="#"><i class="fa fa-unlock-alt"></i>Alterar Senha</a>
+    </li>
+    <li>
+      <a routerLink="/login" (click)="logoff()"><i class="fa fa-sign-out"></i>Sair</a>
+    </li>
+  </ul>
+</nav>
+<app-back-end-feedback [model]="backEndFeedback" size="sm"></app-back-end-feedback>

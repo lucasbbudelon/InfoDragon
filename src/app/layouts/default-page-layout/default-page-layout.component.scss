@@ -1,0 +1,74 @@
+@import "../../../sass/tool-box";
+
+$content-height: 85vh;
+
+header {
+  color: $color-palette-white-1;
+}
+
+section {
+  position: fixed;
+  height: $content-height;
+  bottom: $spacing-vertical-default;
+  border-radius: $border-radius-default;
+  background-color: $color-palette-white-1;
+  overflow-y: auto;
+}
+
+.background {
+  $diff: $spacing-vertical-default * 2;
+
+  position: fixed;
+  width: 100vw;
+  height: $content-height - $diff * 2;
+  left: 0;
+  bottom: $spacing-vertical-default + $diff;
+
+  border-radius: $border-radius-default;
+  background-color: $color-palette-gray-2;
+  z-index: -1;
+}
+
+//Desktop
+@media (min-width: $responsive-layout-medium) {
+  $spacing-left: 15vw + $spacing-horizontal-default * 2;
+
+  header {
+    margin-left: $spacing-left;
+
+    #page-title {
+      margin-top: $spacing-vertical-default * 2;
+
+      h1 {
+        font-size: $font-size-xl;
+        font-weight: bold;
+      }
+    }
+  }
+
+  section {
+    width: 100vw - $spacing-left - $spacing-horizontal-default;
+    left: $spacing-left;
+  }
+}
+
+//Mobile
+@media (max-width: $responsive-layout-medium) {
+  header {
+    text-align: center;
+
+    #page-title {
+      margin-top: $spacing-vertical-default * 2;
+
+      h1 {
+        font-size: $font-size-xl;
+        font-weight: bold;
+      }
+    }
+  }
+
+  section {
+    width: 100vw - $spacing-horizontal-default * 2;
+    left: $spacing-horizontal-default;
+  }
+}

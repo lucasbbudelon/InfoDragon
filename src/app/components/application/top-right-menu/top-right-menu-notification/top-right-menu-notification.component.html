@@ -1,0 +1,17 @@
+<i class="fa fa-bell-o top-right-menu-icon" (click)="changeHidden()">
+  <div class="count">2</div>
+</i>
+<nav class="top-right-menu" id="notifications" [hidden]="hidden">
+  <i class="fa fa-times-circle close" (click)="changeHidden()"></i>
+  <div class="header-title">
+    <h1><i class="fa fa-bell-o"></i>Notificações</h1>
+  </div>
+  <ul class="items">
+    <li>
+      <a href="#"><i class="fa fa-unlock-alt"></i>Atualizar Senha</a>
+    </li>
+    <li>
+      <a href="#"><i class="fa fa-cogs"></i>Atualização do Sistema</a>
+    </li>
+  </ul>
+</nav>

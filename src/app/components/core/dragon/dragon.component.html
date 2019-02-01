@@ -1,0 +1,54 @@
+<div id="dragons" class="container-fluid">
+  <div class="page-header row">
+    <div class="col-8 page-title">
+      <h1>Draões</h1>
+    </div>
+    <div class="col-4 page-actions">
+      <a routerLink="/home" routerLinkActive="active">
+        <i class="fa fa-arrow-left"></i>
+      </a>
+      <a routerLink="/dragon/new" routerLinkActive="active">
+        <i class="fa fa-plus-circle"></i>
+      </a>
+    </div>
+  </div>
+  <div *ngIf="dragons.length" class="row page-content">
+    <div id="list" class="col-md-12">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Tipo</th>
+            <th class="hide-mobile" scope="col">Filmes/Séries</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dragon of dragons">
+            <td scope="row">
+              <a routerLink="/dragon/detail/{{dragon.id}}">
+                {{dragon.id}}
+              </a>
+            </td>
+            <td>
+              <a routerLink="/dragon/detail/{{dragon.id}}">
+                {{dragon.name}}
+              </a>
+            </td>
+            <td>
+              <a routerLink="/dragon/detail/{{dragon.id}}">
+                {{dragon.type}}
+              </a>
+            </td>
+            <td class="hide-mobile">
+              <a routerLink="/dragon/detail/{{dragon.id}}">
+                {{dragon.histories.length}}
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<app-back-end-feedback [model]="backEndFeedback" size="md"></app-back-end-feedback>

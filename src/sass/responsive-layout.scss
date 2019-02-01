@@ -1,0 +1,14 @@
+/*Extra small devices (portrait phones, less than 576px)*/
+$responsive-layout-extra-small: calc($responsive-layout-small - 0.02);
+
+/*Small devices (landscape phones, 576px and up)*/
+$responsive-layout-small: 576px;
+
+/*Medium devices (tablets, 768px and up)*/
+$responsive-layout-medium: 768px;
+
+/*Large devices (desktops, 992px and up)*/
+$responsive-layout-large: 992px;
+
+/*Extra large devices (large desktops, 1200px and up)*/
+$responsive-layout-extra-large: 1200px;

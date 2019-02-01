@@ -1,0 +1,56 @@
+@import "../../../../sass/tool-box";
+
+.success-message,
+.error-message {
+  margin-top: $spacing-vertical-default;
+  border-radius: $border-radius-default;
+  color: $color-palette-white-1;
+  opacity: 0.8;
+  z-index: 10;
+  @extend %helper-padding-default;
+}
+
+.success-message {
+  background-color: $color-palette-green-2;
+}
+
+.error-message {
+  background-color: $color-palette-red-1;
+}
+
+@mixin loading($size) {
+  margin-top: $spacing-vertical-default;
+  margin-bottom: $spacing-vertical-default;
+  margin-left: auto;
+  margin-right: auto;
+
+  $border-size: $size * 0.05;
+  width: $size;
+  height: $size;
+
+  border: $border-size solid $color-palette-gray-2;
+  border-top: $border-size solid $color-palette-blue-4;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+.loading-sm {
+  @include loading(50px);
+}
+
+.loading-md {
+  @include loading(50px);
+}
+
+.loading-lg {
+  @include loading(150px);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
