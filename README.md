@@ -14,11 +14,15 @@ Criar uma aplicação que contenha​:
 
 ### Uma página com os detalhes de um dragão específico:
 Os seguintes dados devem ser apresentados na página:
-+ Data de criação;
 + Nome;
++ Data de criação;
 + Tipo.
 
 ### Uma página para cadastro de dragões:
+Os seguintes dados devem ser apresentados na página:
++ Nome;
++ Data de criação (data atual);
++ Tipo.
 
 #### API
 http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon

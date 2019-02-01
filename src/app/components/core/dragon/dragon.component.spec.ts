@@ -84,6 +84,7 @@ describe('DragonComponent', () => {
   });
 
   it('binding items', () => {
+    
     component.dragons = [
       { id: '1', name: 'Dragon 1', createdAt: 'date 1', type: 'type 1' },
       { id: '2', name: 'Dragon 2', createdAt: 'date 2', type: 'type 2', histories: ['', '', ''] },
