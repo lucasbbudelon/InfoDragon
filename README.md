@@ -1,13 +1,12 @@
 # InfoDragon
-Teste prático para uma vaga de Front-End.
-https://github.com/WoopSicredi/jobs/issues/6
+Teste prático para uma [vaga](https://github.com/WoopSicredi/jobs/issues/6) de Front-End.
 
 ## Objetivo
 Criar uma aplicação que contenha​:
 
 ## Página de login:
 + Única página disponível se não estiver logado;
-+ Criar um usuário básico para acesso.
++ Criar um usuário básico para acesso (login:lucas / senha:123456).
 
 ## Uma página de lista de dragões:
 + Os nomes devem estar em ordem alfabética;
