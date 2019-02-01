@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 import { CookieService } from 'ngx-cookie-service/cookie-service/cookie.service';
 
@@ -22,6 +23,14 @@ describe('DragonComponent', () => {
   let component: DragonComponent;
   let fixture: ComponentFixture<DragonComponent>;
   let element;
+
+  const dragonServiceMock: Partial<DragonService> = {
+    getAll: () => {
+      return Observable.create(observer => {
+        observer.complete();
+      });
+    }
+  };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -46,7 +55,7 @@ describe('DragonComponent', () => {
         HttpClient,
         HttpHandler,
         CookieService,
-        DragonService,
+        { provide: DragonService, useValue: dragonServiceMock },
         LoginService
       ]
     })
@@ -72,5 +81,28 @@ describe('DragonComponent', () => {
   it('page buttons', () => {
     expect(element.querySelector('i.fa-plus-circle')).toBeTruthy('button-new');
     expect(element.querySelector('i.fa-arrow-left')).toBeTruthy('button-back');
+  });
+
+  it('binding items', () => {
+    component.dragons = [
+      { id: '1', name: 'Dragon 1', createdAt: 'date 1', type: 'type 1' },
+      { id: '2', name: 'Dragon 2', createdAt: 'date 2', type: 'type 2', histories: ['', '', ''] },
+      { id: '3', name: 'Dragon 3', createdAt: 'date 3', type: 'type 3' }
+    ];
+
+    fixture.detectChanges();
+
+    const thead = document.querySelector('table').querySelector('thead');
+    expect(thead.children[0].children[0].innerHTML).toBe('Id');
+    expect(thead.children[0].children[1].innerHTML).toBe('Nome');
+    expect(thead.children[0].children[2].innerHTML).toBe('Tipo');
+    expect(thead.children[0].children[3].innerHTML).toBe('Filmes/Séries');
+
+    const tbody = document.querySelector('table').querySelector('tbody');
+    expect(tbody.childElementCount).toBe(3);
+    expect(tbody.children[1].children[0].querySelector('a').innerText).toBe('2');
+    expect(tbody.children[1].children[1].querySelector('a').innerText).toBe('Dragon 2');
+    expect(tbody.children[1].children[2].querySelector('a').innerText).toBe('type 2');
+    expect(tbody.children[1].children[3].querySelector('a').innerText).toBe('3');
   });
 });
