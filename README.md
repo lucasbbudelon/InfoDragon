@@ -1,5 +1,6 @@
 # InfoDragon
 Teste prático para uma vaga de Front-End.
+https://github.com/WoopSicredi/jobs/issues/6
 
 ## Objetivo
 Criar uma aplicação que contenha​:
