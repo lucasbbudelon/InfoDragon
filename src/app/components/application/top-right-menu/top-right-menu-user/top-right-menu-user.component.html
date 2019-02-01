@@ -1,7 +1,7 @@
 <i class="fa fa-user top-right-menu-icon" (click)="changeHidden()"></i>
 <nav class="top-right-menu" id="user-info" [hidden]="hidden">
   <i class="fa fa-times-circle close" (click)="changeHidden()"></i>
-  <div class="header">
+  <div *ngIf="user" class="header">
     <img alt="Imagem do usuário" [src]="user?.image">
     <h1>{{user?.name}}</h1>
     <h2>{{user?.jobRole}}</h2>
