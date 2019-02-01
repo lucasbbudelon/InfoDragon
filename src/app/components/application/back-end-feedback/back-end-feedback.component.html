@@ -1,3 +1,3 @@
-<div class="loading-{{size}}" *ngIf="model.loading && model.errorMessage == null"></div>
-<div class="success-message" *ngIf="model.successMessage != null">{{model.successMessage}}</div>
-<div class="error-message" *ngIf="model.errorMessage != null">{{model.errorMessage}}</div>
+<div class="loading-{{size}}" *ngIf="model?.loading && model?.errorMessage == null"></div>
+<div class="success-message" *ngIf="model?.successMessage != null">{{model.successMessage}}</div>
+<div class="error-message" *ngIf="model?.errorMessage != null">{{model.errorMessage}}</div>
