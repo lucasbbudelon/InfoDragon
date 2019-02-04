@@ -1,0 +1,72 @@
+<div *ngIf="!backEndFeedback.loading" class="container-fluid">
+  <div class="page-header row">
+    <div class="col-12 page-title">
+      <h1>Resumo dos Dragões</h1>
+    </div>
+  </div>
+  <div id="resume-number" class="row page-content">
+    <div class="col-4">
+      <div class="page-sub-title row">
+        <div class="col-12">
+          <h2>Total de Dragões</h2>
+        </div>
+      </div>
+      <div class="row page-content">
+        <div class="info-number col-12">
+          {{dragons.length}}
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="page-sub-title row">
+        <div class="col-12">
+          <h2>Total de Tipos</h2>
+        </div>
+      </div>
+      <div class="row page-content">
+        <div class="info-number col-12">
+          {{chartByType.label.length}}
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="page-sub-title row">
+        <div class="col-12">
+          <h2>Total de Histórias/Séries</h2>
+        </div>
+      </div>
+      <div class="row page-content">
+        <div class="info-number col-12">
+          {{chartByHistories.label.length}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row page-content">
+    <div class="col-6">
+      <div class="page-sub-title row">
+        <div class="col-12 page-title">
+          <h2>Dragões x Tipos</h2>
+        </div>
+      </div>
+      <div class="row page-content">
+        <div class="col-md-12">
+          <canvas baseChart chartType="pie" [data]="chartByType?.data" [labels]="chartByType?.label"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="page-sub-title row">
+        <div class="col-12 page-title">
+          <h2>Dragões x Histórias/Séries</h2>
+        </div>
+      </div>
+      <div class="row page-content">
+        <div class="col-md-12">
+          <canvas baseChart chartType="doughnut" [data]="chartByHistories?.data" [labels]="chartByHistories?.label"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-back-end-feedback [model]="backEndFeedback" size="md"></app-back-end-feedback>

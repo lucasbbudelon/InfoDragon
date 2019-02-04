@@ -7,22 +7,23 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 import { CookieService } from 'ngx-cookie-service/cookie-service/cookie.service';
 
-import { BackEndFeedbackComponent, NavMenuComponent } from '../../../components/application/_index';
-import { TopRightMenuComponent } from '../../../components/application/_index';
-import { TopRightMenuNotificationComponent } from '../../../components/application/_index';
-import { TopRightMenuUserComponent } from '../../../components/application/_index';
+import { BackEndFeedbackComponent, NavMenuComponent } from '../../../../components/application/_index';
+import { TopRightMenuComponent } from '../../../../components/application/_index';
+import { TopRightMenuNotificationComponent } from '../../../../components/application/_index';
+import { TopRightMenuUserComponent } from '../../../../components/application/_index';
 
-import { DragonComponent, DragonDasboardComponent, LoginComponent } from '../../../components/core/_index';
+import { DragonComponent, DragonDetailComponent, DragonDasboardComponent } from '../../../../components/core/_index';
+import { LoginComponent } from '../../../../components/core/_index';
 
-import { DefaultPageLayoutComponent, HomePageLayoutComponent } from '../../../layouts/_index';
-import { LoginLayoutComponent } from '../../../layouts/_index';
-import { PageNotFoundLayoutComponent } from '../../../layouts/_index';
+import { DefaultPageLayoutComponent, HomePageLayoutComponent } from '../../../../layouts/_index';
+import { LoginLayoutComponent } from '../../../../layouts/_index';
+import { PageNotFoundLayoutComponent } from '../../../../layouts/_index';
 
-import { DragonService, LoginService } from '../../../services/_index';
+import { DragonService, LoginService } from '../../../../services/_index';
 
-describe('NavMenuComponent', () => {
-  let component: NavMenuComponent;
-  let fixture: ComponentFixture<NavMenuComponent>;
+describe('DragonDasboardComponent', () => {
+  let component: DragonDetailComponent;
+  let fixture: ComponentFixture<DragonDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -42,6 +43,7 @@ describe('NavMenuComponent', () => {
         TopRightMenuNotificationComponent,
         TopRightMenuUserComponent,
         DragonComponent,
+        DragonDetailComponent,
         DragonDasboardComponent,
         LoginComponent
       ],
@@ -57,7 +59,7 @@ describe('NavMenuComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NavMenuComponent);
+    fixture = TestBed.createComponent(DragonDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

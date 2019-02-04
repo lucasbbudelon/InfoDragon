@@ -1,0 +1,23 @@
+@import "../../../../sass/tool-box";
+
+.page-header {
+  border-bottom: $border-default;
+  margin-bottom: $spacing-vertical-lg;
+  @extend %helper-margin-default;
+
+  .page-title {
+    padding: 0;
+    h1 {
+      padding-left: 0;
+      font-size: $font-size-xl;
+      @extend %helper-padding-default;
+    }
+  }
+}
+
+.page-sub-title {
+  h2 {
+    padding: 0;
+    font-size: $font-size-lg;
+  }
+}

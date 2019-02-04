@@ -4,6 +4,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 import { Observable } from 'rxjs';
 
+import { ChartsModule } from 'ng2-charts/ng2-charts';
+
 import { CookieService } from 'ngx-cookie-service/cookie-service/cookie.service';
 
 import { BackEndFeedbackComponent, NavMenuComponent } from '../../../components/application/_index';
@@ -11,7 +13,7 @@ import { TopRightMenuComponent } from '../../../components/application/_index';
 import { TopRightMenuNotificationComponent } from '../../../components/application/_index';
 import { TopRightMenuUserComponent } from '../../../components/application/_index';
 
-import { DragonComponent, LoginComponent } from '../../../components/core/_index';
+import { DragonComponent, DragonDasboardComponent, LoginComponent } from '../../../components/core/_index';
 
 import { DefaultPageLayoutComponent, HomePageLayoutComponent } from '../../../layouts/_index';
 import { LoginLayoutComponent } from '../../../layouts/_index';
@@ -36,7 +38,8 @@ describe('DragonComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        FormsModule
+        FormsModule,
+        ChartsModule
       ],
       declarations: [
         DefaultPageLayoutComponent,
@@ -49,6 +52,7 @@ describe('DragonComponent', () => {
         TopRightMenuNotificationComponent,
         TopRightMenuUserComponent,
         DragonComponent,
+        DragonDasboardComponent,
         LoginComponent
       ],
       providers: [
@@ -84,7 +88,7 @@ describe('DragonComponent', () => {
   });
 
   it('binding items', () => {
-    
+
     component.dragons = [
       { id: '1', name: 'Dragon 1', createdAt: 'date 1', type: 'type 1' },
       { id: '2', name: 'Dragon 2', createdAt: 'date 2', type: 'type 2', histories: ['', '', ''] },

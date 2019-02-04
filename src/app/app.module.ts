@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // External Modules
+import { ChartsModule } from 'ng2-charts';
 
 // Routes
 import { AppRoutingModule } from './app-routing.module';
@@ -31,8 +32,8 @@ import { BackEndFeedbackComponent } from './components/application/back-end-feed
 // Components (core)
 import { DragonComponent } from './components/core/_index';
 import { DragonDetailComponent } from './components/core/_index';
+import { DragonDasboardComponent } from './components/core/_index';
 import { LoginComponent } from './components/core/_index';
-
 
 @NgModule({
   declarations: [
@@ -48,14 +49,16 @@ import { LoginComponent } from './components/core/_index';
     BackEndFeedbackComponent,
     DragonComponent,
     DragonDetailComponent,
-    LoginComponent
+    LoginComponent,
+    DragonDasboardComponent
   ],
   imports: [
     FormsModule,
     HttpClientModule,
     RouterModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChartsModule
   ],
   providers: [
     CookieService,
