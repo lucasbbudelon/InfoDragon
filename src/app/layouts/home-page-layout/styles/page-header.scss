@@ -13,6 +13,21 @@
       @extend %helper-padding-default;
     }
   }
+
+  .page-actions {
+    padding: 0;
+    a {
+      @extend %helper-link-decoration-none;
+    }
+
+    i {
+      cursor: pointer;
+      float: right;
+      padding-right: 0;
+      font-size: $font-size-xl;
+      @extend %helper-padding-default;
+    }
+  }
 }
 
 .page-sub-title {

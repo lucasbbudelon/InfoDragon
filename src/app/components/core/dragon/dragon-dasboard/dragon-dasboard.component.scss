@@ -8,3 +8,10 @@
     font-size: $font-size-xl * 2;
   }
 }
+
+//Mobile
+@media (max-width: $responsive-layout-medium) {
+  .dashboard{
+    margin-top: $spacing-vertical-xl;
+  }
+}

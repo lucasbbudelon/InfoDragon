@@ -1,11 +1,16 @@
 <div *ngIf="!backEndFeedback.loading" class="container-fluid">
   <div class="page-header row">
-    <div class="col-12 page-title">
+    <div class="col-8 page-title">
       <h1>Resumo dos Dragões</h1>
+    </div>
+    <div class="col-4 page-actions">
+      <a routerLink="/dragon/list">
+        <i class="fa fa-list"></i>
+      </a>
     </div>
   </div>
   <div id="resume-number" class="row page-content">
-    <div class="col-4">
+    <div class="col-6 col-md-4">
       <div class="page-sub-title row">
         <div class="col-12">
           <h2>Total de Dragões</h2>
@@ -17,7 +22,7 @@
         </div>
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-6 col-md-4">
       <div class="page-sub-title row">
         <div class="col-12">
           <h2>Total de Tipos</h2>
@@ -29,7 +34,7 @@
         </div>
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-6 col-md-4">
       <div class="page-sub-title row">
         <div class="col-12">
           <h2>Total de Histórias/Séries</h2>
@@ -43,7 +48,7 @@
     </div>
   </div>
   <div class="row page-content">
-    <div class="col-6">
+    <div class="dashboard col-12 col-md-6">
       <div class="page-sub-title row">
         <div class="col-12 page-title">
           <h2>Dragões x Tipos</h2>
@@ -55,7 +60,7 @@
         </div>
       </div>
     </div>
-    <div class="col-6">
+    <div class="dashboard col-12 col-md-6">
       <div class="page-sub-title row">
         <div class="col-12 page-title">
           <h2>Dragões x Histórias/Séries</h2>
