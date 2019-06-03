@@ -10,18 +10,19 @@ import { TopRightMenuNotificationComponent
  } from 'src/app/components/top-right-menu/top-right-menu-notification/top-right-menu-notification.component';
 import { TopRightMenuUserComponent } from 'src/app/components/top-right-menu/top-right-menu-user/top-right-menu-user.component';
 import { TopRightMenuComponent } from 'src/app/components/top-right-menu/top-right-menu.component';
+import { DefaultPageLayoutComponent } from 'src/app/layouts/default-page-layout/default-page-layout.component';
+import { HomePageLayoutComponent } from 'src/app/layouts/home-page-layout/home-page-layout.component';
+import { LoginLayoutComponent } from 'src/app/layouts/login-layout/login-layout.component';
+import { PageNotFoundLayoutComponent } from 'src/app/layouts/page-not-found-layout/page-not-found-layout.component';
 import { DragonDasboardComponent } from 'src/app/pages/dragon/dragon-dasboard/dragon-dasboard.component';
+import { DragonComponent } from 'src/app/pages/dragon/dragon.component';
 import { DragonService } from 'src/app/pages/dragon/dragon.service';
 import { LoginComponent } from 'src/app/pages/login/login.component';
 import { LoginService } from 'src/app/pages/login/login.service';
-import { DefaultPageLayoutComponent } from '../default-page-layout/default-page-layout.component';
-import { HomePageLayoutComponent } from '../home-page-layout/home-page-layout.component';
-import { LoginLayoutComponent } from '../login-layout/login-layout.component';
-import { PageNotFoundLayoutComponent } from '../page-not-found-layout/page-not-found-layout.component';
 
-describe('LoginLayoutComponent', () => {
-  let component: LoginLayoutComponent;
-  let fixture: ComponentFixture<LoginLayoutComponent>;
+describe('NavMenuComponent', () => {
+  let component: NavMenuComponent;
+  let fixture: ComponentFixture<NavMenuComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -40,6 +41,7 @@ describe('LoginLayoutComponent', () => {
         TopRightMenuComponent,
         TopRightMenuNotificationComponent,
         TopRightMenuUserComponent,
+        DragonComponent,
         DragonDasboardComponent,
         LoginComponent
       ],
@@ -51,11 +53,11 @@ describe('LoginLayoutComponent', () => {
         LoginService
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginLayoutComponent);
+    fixture = TestBed.createComponent(NavMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

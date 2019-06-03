@@ -1,17 +1,9 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
-// Guards
-import { AuthenticationDefaultGuard } from './guards/_index';
-
-// Layout
-import { DefaultPageLayoutComponent } from './layouts/_index';
-import { HomePageLayoutComponent } from './layouts/_index';
-import { LoginLayoutComponent } from './layouts/_index';
-import { PageNotFoundLayoutComponent } from './layouts/_index';
-
-// Components
-import { DragonComponent, DragonDetailComponent } from './components/core/_index';
+import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
+import { DefaultPageLayoutComponent, HomePageLayoutComponent, LoginLayoutComponent, PageNotFoundLayoutComponent } from './layouts/_index';
+import { DragonDetailComponent } from './pages/dragon/dragon-detail/dragon-detail.component';
+import { DragonComponent } from './pages/dragon/dragon.component';
 
 const routes: Routes = [
   {
@@ -25,13 +17,13 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    canActivate: [AuthenticationDefaultGuard],
+    canActivate: [AuthGuard],
     component: HomePageLayoutComponent
   },
   {
     path: 'dragon',
     component: DefaultPageLayoutComponent,
-    canActivate: [AuthenticationDefaultGuard],
+    canActivate: [AuthGuard],
     children: [
       { path: 'list', component: DragonComponent },
       { path: 'new', component: DragonDetailComponent },

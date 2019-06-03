@@ -1,0 +1,30 @@
+@import "../../../sass/tool-box";
+@import "../../layouts/default-page-layout/styles/page-header.scss";
+
+table {
+  thead {
+    background-color: $color-palette-gray-6;
+
+    th {
+      $padding: 0.3em;
+      padding-top: $padding;
+      padding-bottom: $padding;
+      font-size: $font-size-md;
+      border-bottom: 0;
+    }
+  }
+  a {
+    @extend %helper-link-decoration-none;
+  }
+}
+
+//Desktop
+@media (min-width: $responsive-layout-medium) {
+}
+
+//Mobile
+@media (max-width: $responsive-layout-medium) {
+  .hide-mobile {
+    display: none;
+  }
+}

@@ -1,0 +1,118 @@
+@import "../../../sass/tool-box";
+
+nav#main-nav-menu {
+  position: fixed;
+  left: $spacing-horizontal-default;
+  top: $spacing-vertical-default;
+  height: 100vh - ($spacing-vertical-default * 2);
+  border-radius: $border-radius-default;
+  background-color: $color-palette-white-1;
+  @extend %helper-padding-default;
+
+  #system-logo {
+    img {
+      margin-top: $spacing-vertical-default;
+      margin-bottom: $spacing-vertical-default * 2;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .group {
+    border-top: $border-default;
+    @extend %helper-padding-default;
+
+    .group-title {
+      margin-bottom: $spacing-vertical-sm;
+      margin-left: $spacing-horizontal-default;
+      font-size: $font-size-md;
+      font-weight: bold;
+    }
+
+    ul {
+      @extend %helper-list-style-none;
+
+      li {
+        padding-top: $spacing-vertical-sm;
+        padding-bottom: $spacing-vertical-sm;
+        padding-left: $spacing-horizontal-default;
+        padding-right: $spacing-horizontal-default;
+
+        font-size: $font-size-md;
+
+        &:hover {
+          border-radius: $border-radius-default;
+          background-color: $color-palette-blue-4;
+          color: $color-palette-white-1;
+        }
+
+        i {
+          width: 2em;
+        }
+        a {
+          @extend %helper-link-decoration-none;
+        }
+      }
+    }
+  }
+}
+
+//Desktop
+@media (min-width: $responsive-layout-medium) {
+  nav#main-nav-menu {
+    $nav-menu-width: 15vw;
+    width: $nav-menu-width;
+
+    #system-logo {
+      img {
+        width: $nav-menu-width * 0.7;
+        margin-top: $spacing-vertical-default;
+        margin-bottom: $spacing-vertical-default * 2;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  i#menu-burge {
+    display: none;
+  }
+}
+
+//Mobile
+@media (max-width: $responsive-layout-medium) {
+  nav#main-nav-menu {
+    $nav-menu-width: 40vw;
+    width: $nav-menu-width;
+    border: $border-default;
+
+    #system-logo {
+      img {
+        width: $nav-menu-width * 0.7;
+        margin-top: $spacing-vertical-default;
+        margin-bottom: $spacing-vertical-default * 2;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  i#menu-burger {
+    z-index: 9999;
+    cursor: pointer;
+    display: block;
+    position: fixed;
+    color: $color-palette-white-1;
+    font-size: 1.4em;;
+    top: $spacing-vertical-default;
+    left: $spacing-horizontal-default;
+  }
+
+  nav#main-nav-menu {
+    z-index: 9999;
+    display: none;
+  }
+}

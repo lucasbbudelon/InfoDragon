@@ -1,39 +1,22 @@
-// Angular
+
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-// External Modules
+import { RouterModule } from '@angular/router';
 import { ChartsModule } from 'ng2-charts';
-
-// Routes
-import { AppRoutingModule } from './app-routing.module';
-
-// Services
 import { CookieService } from 'ngx-cookie-service';
-import { DragonService, LoginService } from './services/_index';
-
-// Layouts
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DefaultPageLayoutComponent } from './layouts/_index';
-import { HomePageLayoutComponent } from './layouts/_index';
-import { LoginLayoutComponent } from './layouts/_index';
-import { PageNotFoundLayoutComponent } from './layouts/_index';
-
-// Components (application)
-import { NavMenuComponent } from './components/application/_index';
-import { TopRightMenuComponent } from './components/application/_index';
-import { TopRightMenuNotificationComponent } from './components/application/_index';
-import { TopRightMenuUserComponent } from './components/application/_index';
-import { BackEndFeedbackComponent } from './components/application/back-end-feedback/back-end-feedback.component';
-
-// Components (core)
-import { DragonComponent } from './components/core/_index';
-import { DragonDetailComponent } from './components/core/_index';
-import { DragonDasboardComponent } from './components/core/_index';
-import { LoginComponent } from './components/core/_index';
+import { BackEndFeedbackComponent } from './components/back-end-feedback/back-end-feedback.component';
+import { NavMenuComponent, TopRightMenuComponent, TopRightMenuNotificationComponent, TopRightMenuUserComponent } from './components/_index';
+import { DefaultPageLayoutComponent, HomePageLayoutComponent, LoginLayoutComponent, PageNotFoundLayoutComponent } from './layouts/_index';
+import { DragonDasboardComponent } from './pages/dragon/dragon-dasboard/dragon-dasboard.component';
+import { DragonDetailComponent } from './pages/dragon/dragon-detail/dragon-detail.component';
+import { DragonComponent } from './pages/dragon/dragon.component';
+import { DragonService } from './pages/dragon/dragon.service';
+import { LoginComponent } from './pages/login/login.component';
+import { LoginService } from './pages/login/login.service';
 
 @NgModule({
   declarations: [

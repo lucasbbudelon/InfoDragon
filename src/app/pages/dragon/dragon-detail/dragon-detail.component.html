@@ -1,0 +1,42 @@
+<div id="dragon-detail" class="container-fluid">
+  <div class="page-header row">
+    <div class="col-8 page-title">
+      <h1 *ngIf="update">Dragão # {{id}}</h1>
+      <h1 *ngIf="!update">Inclusão de Dragão</h1>
+    </div>
+    <div class="col-4 page-actions">
+      <a routerLink="/dragon/list">
+        <i class="fa fa-arrow-left"></i>
+      </a>
+      <i *ngIf="dragon" class="fa fa-save" (click)="save()"></i>
+      <i *ngIf="dragon" class="fa fa-trash" (click)="delete()"></i>
+    </div>
+  </div>
+  <div *ngIf="dragon != null" class="row page-content">
+    <div id="info" class="col-md-5">
+      <form id="dragon-fields">
+        <div class="field">
+          <label>Nome *</label>
+          <input required type="text" pattern="^[0-9A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" maxlength="100"
+            [(ngModel)]="dragon.name" [ngModelOptions]="{standalone: true}" />
+        </div>
+        <div *ngIf="update" class="field">
+          <label>Data de Criação</label>
+          <input type="text" [value]="dragon.createdAt | date:'dd/MM/yyyy dd:mm:ss'" readonly />
+        </div>
+        <div class="field">
+          <label>Tipo *</label>
+          <input required type="text" pattern="^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$" maxlength="20" [(ngModel)]="dragon.type"
+            [ngModelOptions]="{standalone: true}" />
+        </div>
+      </form>
+    </div>
+    <div *ngIf="update && dragon?.histories?.length" id="histories" class="col-md-3 offset-md-2">
+      <h2>Filmes/Séries</h2>
+      <ul>
+        <li *ngFor="let historie of dragon.histories">{{historie}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<app-back-end-feedback [model]="backEndFeedback" size="md"></app-back-end-feedback>

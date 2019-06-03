@@ -1,22 +1,23 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClient, HttpHandler } from '@angular/common/http';
-import { RouterTestingModule } from '@angular/router/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-
-import { ChartsModule } from 'ng2-charts/ng2-charts';
-
-import { CookieService } from 'ngx-cookie-service/cookie-service/cookie.service';
-
-import { BackEndFeedbackComponent, NavMenuComponent } from '../../components/application/_index';
-import { TopRightMenuComponent, TopRightMenuNotificationComponent, TopRightMenuUserComponent } from '../../components/application/_index';
-
-import { DragonDasboardComponent, LoginComponent } from '../../components/core/_index';
-
-import { DefaultPageLayoutComponent, HomePageLayoutComponent } from '../_index';
-import { LoginLayoutComponent } from '../_index';
-import { PageNotFoundLayoutComponent } from '../_index';
-
-import { DragonService, LoginService } from '../../services/_index';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ChartsModule } from 'ng2-charts';
+import { CookieService } from 'ngx-cookie-service';
+import { BackEndFeedbackComponent } from 'src/app/components/back-end-feedback/back-end-feedback.component';
+import { NavMenuComponent } from 'src/app/components/nav-menu/nav-menu.component';
+import { TopRightMenuNotificationComponent
+ } from 'src/app/components/top-right-menu/top-right-menu-notification/top-right-menu-notification.component';
+import { TopRightMenuUserComponent } from 'src/app/components/top-right-menu/top-right-menu-user/top-right-menu-user.component';
+import { TopRightMenuComponent } from 'src/app/components/top-right-menu/top-right-menu.component';
+import { DragonDasboardComponent } from 'src/app/pages/dragon/dragon-dasboard/dragon-dasboard.component';
+import { DragonService } from 'src/app/pages/dragon/dragon.service';
+import { LoginComponent } from 'src/app/pages/login/login.component';
+import { LoginService } from 'src/app/pages/login/login.service';
+import { DefaultPageLayoutComponent } from '../default-page-layout/default-page-layout.component';
+import { HomePageLayoutComponent } from '../home-page-layout/home-page-layout.component';
+import { LoginLayoutComponent } from '../login-layout/login-layout.component';
+import { PageNotFoundLayoutComponent } from './page-not-found-layout.component';
 
 describe('PageNotFoundLayoutComponent', () => {
   let component: PageNotFoundLayoutComponent;

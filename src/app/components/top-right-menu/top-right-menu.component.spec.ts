@@ -14,14 +14,15 @@ import { DragonDasboardComponent } from 'src/app/pages/dragon/dragon-dasboard/dr
 import { DragonService } from 'src/app/pages/dragon/dragon.service';
 import { LoginComponent } from 'src/app/pages/login/login.component';
 import { LoginService } from 'src/app/pages/login/login.service';
-import { DefaultPageLayoutComponent } from '../default-page-layout/default-page-layout.component';
-import { HomePageLayoutComponent } from '../home-page-layout/home-page-layout.component';
-import { LoginLayoutComponent } from '../login-layout/login-layout.component';
-import { PageNotFoundLayoutComponent } from '../page-not-found-layout/page-not-found-layout.component';
+import { PageNotFoundLayoutComponent } from 'src/app/layouts/page-not-found-layout/page-not-found-layout.component';
+import { HomePageLayoutComponent } from 'src/app/layouts/home-page-layout/home-page-layout.component';
+import { DefaultPageLayoutComponent } from 'src/app/layouts/default-page-layout/default-page-layout.component';
+import { LoginLayoutComponent } from 'src/app/layouts/login-layout/login-layout.component';
+import { DragonComponent } from 'src/app/pages/dragon/dragon.component';
 
-describe('LoginLayoutComponent', () => {
-  let component: LoginLayoutComponent;
-  let fixture: ComponentFixture<LoginLayoutComponent>;
+describe('TopRightMenuComponent', () => {
+  let component: TopRightMenuComponent;
+  let fixture: ComponentFixture<TopRightMenuComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -40,6 +41,7 @@ describe('LoginLayoutComponent', () => {
         TopRightMenuComponent,
         TopRightMenuNotificationComponent,
         TopRightMenuUserComponent,
+        DragonComponent,
         DragonDasboardComponent,
         LoginComponent
       ],
@@ -55,7 +57,7 @@ describe('LoginLayoutComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoginLayoutComponent);
+    fixture = TestBed.createComponent(TopRightMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
